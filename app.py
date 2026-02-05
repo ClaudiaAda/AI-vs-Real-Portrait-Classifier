@@ -7,7 +7,7 @@ import numpy as np
 # --------------------
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model("modelo_completo.keras")
+    model = tf.keras.models.load_model("modelo_completo_fp16.keras")
     return model
 
 model = load_model()
@@ -59,4 +59,5 @@ if uploaded_file is not None:
 
         # Mostrar resultado
         st.success(f"Predicción: **{label}**")
+
         st.info(f"Confianza: {pred:.2f}")
