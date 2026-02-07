@@ -27,7 +27,7 @@ IMG_SIZE = (224, 224)
 # --------------------
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model("models/modelo_DEFINITIVO_compressed.keras")
+    model = tf.keras.models.load_model("https://github.com/ClaudiaAda/AI-vs-Real-Portrait-Classifier/tree/dfe63314c9ab3d722371a9f690441c3de1467b08/models/modelo_DEFINITIVO_compressed.keras")
     return model
 
 model = load_model()
@@ -65,5 +65,6 @@ if uploaded_file is not None:
         # Mostrar resultado
         st.success(f"Predicción: **{label}**")
         st.info(f"Confianza: {pred:.2f}")
+
 
 
