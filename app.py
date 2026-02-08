@@ -27,8 +27,13 @@ IMG_SIZE = (224, 224)
 # --------------------
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model("modelo_DEFINITIVO_compressed.keras")
-    return model
+    try:
+        model = tf.keras.models.load_model("modelo_DEFINITIVO_compressed.keras")
+        return model
+    except Exception as e:
+        st.error("❌ Error cargando el modelo")
+        st.exception(e)
+        return None
 
 model = load_model()
 
@@ -65,6 +70,7 @@ if uploaded_file is not None:
         # Mostrar resultado
         st.success(f"Predicción: **{label}**")
         st.info(f"Confianza: {pred:.2f}")
+
 
 
 
