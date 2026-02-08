@@ -72,7 +72,8 @@ if uploaded_file is not None:
 
         # Mostrar resultado
         st.success(f"Predicción: **{label}**")
-        st.info(f"Confianza: {pred:.2f}")
+        st.info(f"Confianza: {pred if pred > 0.5 else 1 - pred:.2f}")
+
 
 
 
