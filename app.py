@@ -37,6 +37,9 @@ def load_model():
 
 model = load_model()
 
+if model is None:
+    st.stop()
+
 # --------------------
 # Función de preprocesamiento
 # --------------------
@@ -70,6 +73,7 @@ if uploaded_file is not None:
         # Mostrar resultado
         st.success(f"Predicción: **{label}**")
         st.info(f"Confianza: {pred:.2f}")
+
 
 
 
