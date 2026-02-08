@@ -17,7 +17,7 @@ st.write(
     "### 📸 Sube una imagen de un retrato humano y el modelo analizará si es real o generada artificialmente. 📸"
 )
 st.write(
-    "*Este modelo ha sido entrenado con imágenes generadas por IA (FaceSwap, SFHQ, Stable Diffusion, ThisPersonDoesNotExist). Si se adjuntan fotos de otros modelos, el resultado puede ser menos fiable.*"
+    "*Este modelo ha sido entrenado con imágenes generadas por IA (FaceSwap, SFHQ, Stable Diffusion, ThisPersonDoesNotExist, StyleGan). Si se adjuntan fotos de otros modelos, el resultado puede ser menos fiable.*"
 )
 
 IMG_SIZE = (224, 224)
@@ -73,6 +73,7 @@ if uploaded_file is not None:
         # Mostrar resultado
         st.success(f"Predicción: **{label}**")
         st.info(f"Confianza: {pred:.2f}")
+
 
 
 
